@@ -1,0 +1,91 @@
+{
+	"Interface definition": {
+		"scope": "javascript",
+		"prefix": "api",
+		"body": [
+			"return new Promise((resolve, reject) => {",
+					"\tthis.$$apiDesktop.$1($2)",
+					"\t\t.then((response) => {",
+					"\t\t\tif (response.code === 'success') {",
+					"\t\t\t\tconst res = response.data",
+					"\t\t\t\tresolve(res)",
+					"\t\t\t}",
+					"\t\t}).catch((error) => {",
+					"\t\t\tErrorCallBack(error)",
+					"\t\t\treject(error)",
+					"\t\t})",
+			"})"
+		],
+		"description": "promise接口定义"
+	},
+	"Window console": {
+		"scope": "javascript",
+		"prefix": "wlog",
+		"body": [
+			"window.console.log('$1')"
+		],
+		"description": "window.console"
+	},
+	"$alert Reg": {
+		"scope": "javascript",
+		"prefix": "regA",
+		"body": [
+			"this.$$alert(RegConfirm, RegTitle, {",
+			"\tconfirmButtonText: 'OK',",
+			"\tcenter: true,",
+			"\tcloseOnClickModal: false,",
+			"\tcallback: () => {",
+			"\t\t$1",
+      "\t}",
+      "})"
+		],
+		"description": "Element Alert组件 Reg"
+	},
+	"$alert Update": {
+		"scope": "javascript",
+		"prefix": "updA",
+		"body": [
+			"this.$$alert(Updatefirm, UpdateTitle, {",
+			"\tconfirmButtonText: 'OK',",
+			"\tcenter: true,",
+			"\tcloseOnClickModal: false,",
+			"\tcallback: () => {",
+			"\t\t$1",
+      "\t}",
+      "})"
+		],
+		"description": "Element Alert组件 Update"
+	},
+	"resetFields": {
+		"scope": "javascript",
+		"prefix": "rF",
+		"body": [
+			"this.$refs.form.resetFields()",
+		],
+		"description": "Element Form对整个表单进行重置，将所有字段值重置为初始值并移除校验结果"
+	},
+	"resetData": {
+		"scope": "javascript",
+		"prefix": "rD",
+		"body": [
+			"Object.assign(this.$data, this.$options.data.call(this))",
+		],
+		"description": "还原初始化data"
+	},
+	"resetItem": {
+		"scope": "javascript",
+		"prefix": "rI",
+		"body": [
+			"this.$1 = this.$options.data.call(this).$2",
+		],
+		"description": "还原初始化某个变量"
+	},
+	"importAlert": {
+		"scope": "javascript",
+		"prefix": "iA",
+		"body": [
+			"import '@/assets/aos-style/resetAlert.css'",
+		],
+		"description": "引入自定义Element组件Alert"
+	},
+}
